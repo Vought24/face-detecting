@@ -1,65 +1,63 @@
------------------------------------------------------------------------------------------------------
-FaceMesh Detector using MediaPipe and OpenCV
-This project implements a Face Mesh Detector using MediaPipe and OpenCV. It captures video from a webcam and detects facial landmarks for up to two faces simultaneously, visualizing them on the video stream in real-time.
+# Обнаружение лиц с помощью MediaPipe и OpenCV
 
-Features
-Detects and visualizes face mesh landmarks on live webcam feed.
-Supports up to 2 faces at once.
-Displays real-time FPS (frames per second) on the video feed.
-Stops the video stream on pressing the q key.
-Installation
-Clone the repository:
+Этот проект реализует детектор сетчатки лица с использованием **MediaPipe** и **OpenCV**. Он захватывает видео с веб-камеры и обнаруживает контрольные точки лица для двух лиц одновременно, визуализируя их на видеопотоке в реальном времени. 
 
+## Функции
 
-'''
-git clone https://github.com/vought24/face-mesh-detector.git
-'''
-cd face-mesh-detector
-Create and activate a virtual environment (optional but recommended):
+- Обнаружение и визуализация контрольных точек лица на живом видеопотоке.
+- Поддержка обнаружения до 2 лиц одновременно.
+- Отображение FPS (кадры в секунду) на видеопотоке.
+- Остановка видеопотока при нажатии клавиши `q`.
 
-bash
+## Установка
 
+Следуйте этим шагам, чтобы настроить проект на своем компьютере:
+
+1. **Клонируйте репозиторий:**
+
+   ```bash
+   git clone https://github.com/ваш-логин/face-mesh-detector.git
+   cd face-mesh-detector
+2. **Создайте и активируйте виртуальное окружение (рекомендуется):**
+
+```bash
 python -m venv venv
-source venv/bin/activate  # For Windows, use: venv\Scripts\activate
-Install the required dependencies:
+source venv/bin/activate  # Для Windows используйте: venv\Scripts\activate
+```
+3. **Установите необходимые зависимости:**
 
-bash
+```bash
 
 pip install opencv-python mediapipe
-How to Run
-Ensure that a webcam is connected to your machine (for most laptops, the built-in webcam is 0 by default).
+```
 
-Run the main script:
 
-bash
+4. **Как использовать**
+Убедитесь, что веб-камера подключена (по умолчанию используется первая камера, cv2.VideoCapture(0)). Запустите основной скрипт:
+
+```bash
 
 python face_mesh_detector.py
-A window will open showing the webcam feed with the detected facial landmarks. The FPS will be displayed in the top left corner.
+```
+Откроется окно с видеопотоком и наложенными контрольными точками лица. FPS будет отображён в верхнем левом углу. Чтобы выйти из программы, нажмите клавишу q.
 
-Press the q key to exit the application.
 
-Code Explanation
-FaceMeshDetector Class
-Initialization (__init__): Initializes the face mesh detector using MediaPipe, allowing for up to max_faces faces to be detected at once.
+5. **Обзор кода:**
+   
+Класс FaceMeshDetector
+__init__(self, max_faces=2): Инициализирует детектор сетчатки лица с помощью MediaPipe, позволяя обнаруживать до max_faces лиц. findFaceMesh(self, img): Обрабатывает изображение для обнаружения контрольных точек лица. Конвертирует изображение в RGB, обнаруживает контрольные точки и рисует их на изображении.
 
-findFaceMesh: Processes an image to find facial landmarks. Converts the image from BGR to RGB, detects the landmarks, and draws them on the image.
+Функция main
+Захватывает видеопоток с веб-камеры. Использует FaceMeshDetector для обнаружения контрольных точек на каждом кадре. Отображает FPS в реальном времени. Нажмите q, чтобы завершить работу программы.
 
-Main Function
-Captures the video feed from the webcam.
-Uses FaceMeshDetector to detect face meshes in each frame.
-Displays FPS in real-time.
-Press q to quit.
-Example Output
-When the program is running, it will look like this:
-
-(Replace with a screenshot)
-
-Dependencies
+Зависимости
 Python 3.x
-OpenCV
+OpenCV (opencv-python)
 MediaPipe
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contribution
-Feel free to open issues or submit pull requests to improve the project.
+
+## Поддержка
+
+Если у вас возникли вопросы или предложения по улучшению, свяжитесь с нами по электронной почте: [work.volod@gmail.com](mailto:work.volod@gmail.com).
+
+Telegram: @vought42
