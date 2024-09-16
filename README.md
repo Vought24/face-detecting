@@ -16,7 +16,7 @@
 1. **Клонируйте репозиторий:**
 
    ```bash
-   git clone https://github.com/ваш-логин/face-mesh-detector.git
+   git clone https://github.com/Vought24/face-mesh-detector.git
    cd face-mesh-detector
 2. **Создайте и активируйте виртуальное окружение (рекомендуется):**
 
