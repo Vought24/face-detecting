@@ -10,9 +10,10 @@ Stops the video stream on pressing the q key.
 Installation
 Clone the repository:
 
-bash
 
-git clone https://github.com/your-username/face-mesh-detector.git
+'''
+git clone https://github.com/vought24/face-mesh-detector.git
+'''
 cd face-mesh-detector
 Create and activate a virtual environment (optional but recommended):
 
